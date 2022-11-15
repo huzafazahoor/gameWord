@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFDFD"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="411dp"
+        android:layout_height="308dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="1dp"
+        android:src="@drawable/gameword_icon" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/app_logo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#06CFB4"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="Email"
+        android:paddingLeft="13dp" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/edt_email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="#00BFA5"
+        android:fontFamily="sans-serif-smallcaps"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="13dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edt_password"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="131dp"
+        android:background="#31ACAB"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Log in"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_below="@+id/btnLogin"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="#000000" />
+
+
+</RelativeLayout>

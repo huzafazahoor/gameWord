@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "614688903845",
+    "project_id": "game-word-1233c",
+    "storage_bucket": "game-word-1233c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614688903845:android:88d78bb3c19efc6451b34c",
+        "android_client_info": {
+          "package_name": "com.example.gameword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614688903845-gsv1bbhf7m6iehm7e6dboqoo344ta1rh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzpyWhh1H5ZfKtvhnl3g_aw61mBWmK8f4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "614688903845-gsv1bbhf7m6iehm7e6dboqoo344ta1rh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
