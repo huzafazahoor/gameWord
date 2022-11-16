@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/app_logo"
+        android:id="@+id/creat_Account_text"
         android:layout_width="411dp"
         android:layout_height="308dp"
         android:layout_alignParentStart="true"
@@ -23,12 +23,11 @@
         android:id="@+id/edt_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/app_logo"
+        android:layout_below="@+id/creat_Account_text"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="46dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="#06CFB4"
-        android:fontFamily="sans-serif-smallcaps"
         android:hint="Email"
         android:paddingLeft="13dp" />
 
@@ -41,7 +40,6 @@
         android:layout_marginTop="13dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="#00BFA5"
-        android:fontFamily="sans-serif-smallcaps"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="13dp" />
@@ -57,7 +55,6 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="131dp"
         android:background="#31ACAB"
-        android:fontFamily="sans-serif-smallcaps"
         android:text="Log in"
         android:textColor="@color/white"
         android:textSize="20sp" />

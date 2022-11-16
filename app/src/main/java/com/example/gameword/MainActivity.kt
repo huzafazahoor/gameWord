@@ -34,8 +34,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mAuth = Firebase.auth
+
+        edtEmail = findViewById(R.id.edt_email)
+        edtPassword = findViewById(R.id.edt_password)
+        btnLogin = findViewById(R.id.btnLogin)
         printSignUp()
 
+        btnLogin.setOnClickListener{
+            val email = edtEmail.text.toString().trim()
+            val password = edtPassword.text.toString().trim()
+
+            login(email,password)
+        }
 
 
     }
@@ -47,16 +58,17 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 
+                    Toast.makeText(this@MainActivity, "goodJOB", Toast.LENGTH_SHORT).show()
                     val sharedPreference =  getSharedPreferences("User", Context.MODE_PRIVATE)
                     val editor = sharedPreference.edit()
                     val userid = Firebase.auth.currentUser?.uid
                     editor.putString("UserId",userid)
                     editor.apply()
 
-                    val intent = Intent(this@MainActivity,MainActivity::class.java)
+                    val intent = Intent(this@MainActivity,homePage::class.java)
 
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
-                            Intent.FLAG_ACTIVITY_NEW_TASK)
+                    /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                            Intent.FLAG_ACTIVITY_NEW_TASK)*/
                     finish()
                     startActivity(intent)
                 } else {
