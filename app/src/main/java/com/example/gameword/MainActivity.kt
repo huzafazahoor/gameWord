@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                     editor.putString("UserId",userid)
                     editor.apply()
 
-                    val intent = Intent(this@MainActivity,homePage::class.java)
+                    val intent = Intent(this@MainActivity, homePage::class.java)
 
                     /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
                             Intent.FLAG_ACTIVITY_NEW_TASK)*/
