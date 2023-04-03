@@ -1,11 +1,11 @@
-package com.example.gameword
+package com.example.gameword.activities
 
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gameword.R
 import com.example.gameword.adapters.RecyclerViewAdapter
 
 

@@ -1,17 +1,14 @@
-package com.example.gameword
+package com.example.gameword.activities
 
-import android.content.ContentValues
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
-import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.google.firebase.FirebaseApp
+import com.example.gameword.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -116,7 +113,7 @@ class SignUp : AppCompatActivity() {
                     val user = mAuth.currentUser
                     if (user != null) {
                         //addUserToDatabase(name, email, mAuth.currentUser?.uid!!)
-                        val intent = Intent(this@SignUp,MainActivity::class.java)
+                        val intent = Intent(this@SignUp, MainActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or
                                 Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
