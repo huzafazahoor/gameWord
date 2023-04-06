@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">gameWord</string>
+    <string name="new_member">New Member? <u>Register</u></string>
+    <string name="already_member">Already Registered? <u>Login</u></string>
+    <string name="otp_verification_message">Please input <b>6 digit number</b> we have sent to <b>%1$s</b> for verification.</string>
+    <string name="code_expiration">The code will expire in : <b>%1$s</b> </string>
 </resources>

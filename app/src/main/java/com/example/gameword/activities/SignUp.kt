@@ -49,11 +49,11 @@ class SignUp : AppCompatActivity() {
     }
 
     private fun viewInitializations() {
-        edtName = findViewById(R.id.edt_name)
-        edtEmail = findViewById(R.id.edt_email)
-        edtPassword = findViewById(R.id.edt_password)
-        edtPhoneNumber = findViewById(R.id.edt_phoneNum)
-        btnSignUp = findViewById(R.id.btnSignUp)
+//        edtName = findViewById(R.id.edt_name)
+//        edtEmail = findViewById(R.id.edt_email)
+//        edtPassword = findViewById(R.id.edt_password)
+//        edtPhoneNumber = findViewById(R.id.edt_phoneNum)
+//        btnSignUp = findViewById(R.id.btnSignUp)
 
     }
 
@@ -113,7 +113,7 @@ class SignUp : AppCompatActivity() {
                     val user = mAuth.currentUser
                     if (user != null) {
                         //addUserToDatabase(name, email, mAuth.currentUser?.uid!!)
-                        val intent = Intent(this@SignUp, MainActivity::class.java)
+                        val intent = Intent(this@SignUp, ActivityLogin::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or
                                 Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)

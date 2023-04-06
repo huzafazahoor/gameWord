@@ -3,7 +3,6 @@ package com.example.gameword.activities
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gameword.databinding.ActivitySplashScreenBinding
 
@@ -15,7 +14,7 @@ class ActivitySplashScreen: AppCompatActivity() {
         setContentView(binding.root)
 
         Handler().postDelayed({
-            startActivity(Intent(this@ActivitySplashScreen, MainActivity::class.java))
+            startActivity(Intent(this@ActivitySplashScreen, ActivityLogin::class.java))
         },3000)
     }
 }

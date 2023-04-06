@@ -9,20 +9,18 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.TextPaint
-import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.example.gameword.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class MainActivity : AppCompatActivity() {
+class ActivityLogin : AppCompatActivity() {
 
 
     private lateinit var edtEmail: EditText
@@ -33,13 +31,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         mAuth = Firebase.auth
 
-        edtEmail = findViewById(R.id.edt_email)
-        edtPassword = findViewById(R.id.edt_password)
-        btnLogin = findViewById(R.id.btnLogin)
+//        edtEmail = findViewById(R.id.edt_email)
+//        edtPassword = findViewById(R.id.edt_password)
+//        btnLogin = findViewById(R.id.btnLogin)
         printSignUp()
 
         btnLogin.setOnClickListener{
@@ -59,21 +57,21 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
 
-                    Toast.makeText(this@MainActivity, "goodJOB", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ActivityLogin, "goodJOB", Toast.LENGTH_SHORT).show()
                     val sharedPreference =  getSharedPreferences("User", Context.MODE_PRIVATE)
                     val editor = sharedPreference.edit()
                     val userid = Firebase.auth.currentUser?.uid
                     editor.putString("UserId",userid)
                     editor.apply()
 
-                    val intent = Intent(this@MainActivity, homePage::class.java)
+                    val intent = Intent(this@ActivityLogin, HomePage::class.java)
 
                     /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
                             Intent.FLAG_ACTIVITY_NEW_TASK)*/
                     finish()
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@MainActivity, "User does not exist", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ActivityLogin, "User does not exist", Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -84,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
 
             override fun onClick(textView: View) {
-                startActivity(Intent(this@MainActivity, SignUp::class.java))
+                startActivity(Intent(this@ActivityLogin, SignUp::class.java))
             }
 
             override fun updateDrawState(ds: TextPaint) {
@@ -98,10 +96,10 @@ class MainActivity : AppCompatActivity() {
         ss.setSpan(boldSpan, 23, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
 
-        val textView = findViewById<TextView>(R.id.signUpText)
-        textView.text = ss
-
-        textView.movementMethod = LinkMovementMethod.getInstance()
-        textView.highlightColor = Color.TRANSPARENT
+//        val textView = findViewById<TextView>(R.id.signUpText)
+//        textView.text = ss
+//
+//        textView.movementMethod = LinkMovementMethod.getInstance()
+//        textView.highlightColor = Color.TRANSPARENT
     }
 }

@@ -9,7 +9,7 @@ import com.example.gameword.R
 import com.example.gameword.adapters.RecyclerViewAdapter
 
 
-class homePage : AppCompatActivity() {
+class HomePage : AppCompatActivity() {
 
     private var layoutManager : RecyclerView.LayoutManager? = null
     private var adapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>? = null

@@ -58,7 +58,14 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
 
+    //for country code picker
+    implementation 'com.hbb20:ccp:2.7.0'
 
+    // for OTP entry
+    implementation 'com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0'
+
+    //for toast like alert messages within the app
+    implementation 'com.github.tapadoo:alerter:7.2.4'
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 }

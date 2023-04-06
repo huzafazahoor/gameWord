@@ -4,78 +4,276 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SignUp">
-
-    <TextView
-        android:id="@+id/creat_Account_text"
-        android:layout_width="250dp"
+    tools:context=".activities.SignUp"
+    android:background="@drawable/bg_drawable_layout">
+    <FrameLayout
+        android:id="@+id/bg_design"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"
-        android:text="Creat Account"
-        android:textAlignment="center"
-        android:textSize="35sp"/>
-
-    <EditText
-        android:id="@+id/edt_name"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/creat_Account_text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="20dp"
-        android:hint="Name"
-        android:paddingLeft="13dp" />
-
-    <EditText
-        android:id="@+id/edt_email"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/edt_name"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:hint="Email"
-        android:paddingLeft="13dp"
-        android:textColor="#000000" />
-
-    <EditText
-        android:id="@+id/edt_phoneNum"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/edt_email"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:hint="Phone Number"
-        android:paddingLeft="13dp"/>
-
-
-    <EditText
-        android:id="@+id/edt_password"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/edt_phoneNum"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="20dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:paddingLeft="13dp"/>
-
-
-    <Button
-        android:id="@+id/btnSignUp"
-        android:layout_width="372dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/edt_password"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="19dp"
-        android:text="Sign up"
-        android:textSize="20sp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-175dp"
+            android:background="@drawable/ic_background">
+        </LinearLayout>
+    </FrameLayout>
+    <ScrollView
+        android:layout_below="@id/bg_design"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_15sdp">
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_alignParentTop="true"
+                android:id="@+id/tv_welcome_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearanceHeadline2"
+                android:text="Create Account"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_below="@id/tv_welcome_back"
+                android:id="@+id/tv_fill_fields_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_25sdp"
+                style="@style/TextAppearanceSubtitle2"
+                android:text="Fill following fields to create account."/>
+            <LinearLayout
+                android:id="@+id/ll_name"
+                android:layout_below="@id/tv_fill_fields_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_first_name"
+                    style="@style/TextInputLayoutDesign"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tie_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputEditTextTheme"
+                        android:inputType="text|textEmailAddress"
+                        android:hint="First Name"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_last_name"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    style="@style/TextInputLayoutDesign"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tie_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputEditTextTheme"
+                        android:inputType="text|textEmailAddress"
+                        android:hint="Last Name"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/_15sdp"
+                android:id="@+id/ll_phone_number"
+                android:layout_below="@id/ll_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_drawable_phone_number_layout">
+                <com.hbb20.CountryCodePicker
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    app:ccp_arrowColor="@color/pink_3"
+                    app:ccp_contentColor="@color/pink_3"
+                    app:ccp_showFlag="false"
+                    app:ccpDialog_background="@color/bg_widgets"
+                    app:ccpDialog_cornerRadius="@dimen/_12sdp"
+                    app:ccpDialog_rippleEnable="true"
+                    app:ccpDialog_showTitle="false"
+                    app:ccpDialog_textColor="@color/pink_3"
+                    app:ccp_hintExampleNumber="true"
+                    app:ccp_defaultPhoneCode="92"
+                    app:ccp_showNameCode="false"/>
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="0.8dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/pink_3"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_phone_number"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    style="@style/TextInputLayoutDesign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tie_phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:theme="@style/TextInputEditTextTheme"
+                        android:inputType="text|textEmailAddress"
+                        android:hint="Last Name"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@id/ll_phone_number"
+                android:id="@+id/til_email"
+                android:layout_marginTop="@dimen/_15sdp"
+                style="@style/TextInputLayoutDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/TextInputEditTextTheme"
+                    android:inputType="text|textEmailAddress"
+                    android:hint="Email"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_password"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_below="@id/til_email"
+                style="@style/TextInputLayoutDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextTheme"
+                    android:inputType="textPassword"
+                    android:hint="Password"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_confirm_password"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_below="@id/til_password"
+                style="@style/TextInputLayoutDesign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tie_confirm_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextInputEditTextTheme"
+                    android:inputType="textPassword"
+                    android:hint="Confirm Password"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <androidx.appcompat.widget.AppCompatCheckBox
+                android:layout_below="@id/til_confirm_password"
+                android:id="@+id/tv_forget_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                style="@style/TextAppearanceSubtitle2"
+
+                android:text="I accept the Terms of Service and Privacy Policy."
+                android:buttonTint="@color/pink_3"
+                android:gravity="center_vertical"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_below="@id/tv_forget_password"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/MaterialTextViewTheme"
+                android:id="@+id/tv_register"
+                android:scaleX="-1"
+                android:textScaleX="-1"
+                android:background="@drawable/bg_gradient_btn"
+                android:text="Register"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_below="@id/tv_register"
+                android:id="@+id/tv_new_member"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                style="@style/TextAppearanceSubtitle2"
+                android:text="@string/already_member"
+                android:gravity="center"/>
+        </RelativeLayout>
+    </ScrollView>
+<!--    <TextView-->
+<!--        android:id="@+id/creat_Account_text"-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:text="Creat Account"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="35sp"/>-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/edt_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@+id/creat_Account_text"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:hint="Name"-->
+<!--        android:paddingLeft="13dp" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/edt_email"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@+id/edt_name"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:hint="Email"-->
+<!--        android:paddingLeft="13dp"-->
+<!--        android:textColor="#000000" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/edt_phoneNum"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@+id/edt_email"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:hint="Phone Number"-->
+<!--        android:paddingLeft="13dp"/>-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/edt_password"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@+id/edt_phoneNum"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:hint="Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:paddingLeft="13dp"/>-->
+
+
+<!--    <Button-->
+<!--        android:id="@+id/btnSignUp"-->
+<!--        android:layout_width="372dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/edt_password"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginEnd="19dp"-->
+<!--        android:text="Sign up"-->
+<!--        android:textSize="20sp" />-->
 
 
 </RelativeLayout>
