@@ -40,12 +40,12 @@ class ActivityLogin : AppCompatActivity() {
 //        btnLogin = findViewById(R.id.btnLogin)
         printSignUp()
 
-        btnLogin.setOnClickListener{
-            val email = edtEmail.text.toString().trim()
-            val password = edtPassword.text.toString().trim()
-
-            login(email,password)
-        }
+//        btnLogin.setOnClickListener{
+//            val email = edtEmail.text.toString().trim()
+//            val password = edtPassword.text.toString().trim()
+//
+//            login(email,password)
+//        }
 
 
     }
