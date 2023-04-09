@@ -23,14 +23,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.HomePage"
+            android:name=".activities.ActivityHome"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activities.SignUp"
+            android:name=".activities.ActivityRegistration"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"

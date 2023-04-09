@@ -7,9 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gameword.R
 import com.example.gameword.adapters.RecyclerViewAdapter
+import com.example.gameword.base.BaseActivity
 
 
-class HomePage : AppCompatActivity() {
+class ActivityHome : BaseActivity() {
 
     private var layoutManager : RecyclerView.LayoutManager? = null
     private var adapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>? = null

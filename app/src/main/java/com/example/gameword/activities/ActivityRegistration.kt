@@ -14,7 +14,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import java.util.regex.Pattern
 
-class SignUp : AppCompatActivity() {
+class ActivityRegistration : AppCompatActivity() {
 
 
     private lateinit var edtName: EditText
@@ -113,7 +113,7 @@ class SignUp : AppCompatActivity() {
                     val user = mAuth.currentUser
                     if (user != null) {
                         //addUserToDatabase(name, email, mAuth.currentUser?.uid!!)
-                        val intent = Intent(this@SignUp, ActivityLogin::class.java)
+                        val intent = Intent(this@ActivityRegistration, ActivityLogin::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or
                                 Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intent)
@@ -121,7 +121,7 @@ class SignUp : AppCompatActivity() {
 
                 } else {
                     Log.d("ITM","fail signup")
-                    Toast.makeText(this@SignUp, "Some error occurred", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@ActivityRegistration, "Some error occurred", Toast.LENGTH_SHORT).show()
                 }
             }
     }

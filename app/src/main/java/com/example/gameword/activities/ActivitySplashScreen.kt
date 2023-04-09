@@ -7,9 +7,10 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gameword.base.BaseActivity
 import com.example.gameword.databinding.ActivitySplashScreenBinding
 
-class ActivitySplashScreen: AppCompatActivity() {
+class ActivitySplashScreen: BaseActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.SignUp"
+    tools:context=".activities.ActivityRegistration"
     android:background="@drawable/bg_drawable_layout">
     <FrameLayout
         android:id="@+id/bg_design"

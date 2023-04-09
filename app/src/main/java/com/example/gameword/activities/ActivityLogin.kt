@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -16,11 +15,12 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.gameword.R
+import com.example.gameword.base.BaseActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class ActivityLogin : AppCompatActivity() {
+class ActivityLogin : BaseActivity() {
 
 
     private lateinit var edtEmail: EditText
@@ -64,7 +64,7 @@ class ActivityLogin : AppCompatActivity() {
                     editor.putString("UserId",userid)
                     editor.apply()
 
-                    val intent = Intent(this@ActivityLogin, HomePage::class.java)
+                    val intent = Intent(this@ActivityLogin, ActivityHome::class.java)
 
                     /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
                             Intent.FLAG_ACTIVITY_NEW_TASK)*/
@@ -82,7 +82,7 @@ class ActivityLogin : AppCompatActivity() {
         val clickableSpan: ClickableSpan = object : ClickableSpan() {
 
             override fun onClick(textView: View) {
-                startActivity(Intent(this@ActivityLogin, SignUp::class.java))
+                startActivity(Intent(this@ActivityLogin, ActivityRegistration::class.java))
             }
 
             override fun updateDrawState(ds: TextPaint) {
