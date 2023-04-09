@@ -21,8 +21,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.ActivityHome"
-            android:exported="false"
-            android:label="@string/title_activity_home" />
+            android:exported="false"/>
         <activity
             android:name=".activities.ActivitySplashScreen"
             android:exported="true">
@@ -34,18 +33,10 @@
         </activity>
         <activity
             android:name=".activities.ActivityRegistration"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".activities.ActivityLogin"
-            android:exported="true">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:exported="true"/>
     </application>
 
 </manifest>
