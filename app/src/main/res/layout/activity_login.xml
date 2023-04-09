@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activities.ActivityLogin"
     android:background="@drawable/bg_drawable_layout">
     <FrameLayout
@@ -57,12 +58,14 @@
                 android:layout_below="@id/til_email"
                 style="@style/TextInputLayoutDesign"
                 android:layout_width="match_parent"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/pink_3"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/TextInputEditTextTheme"
+                    android:theme="@style/TextInputEditTextTheme"
                     android:inputType="textPassword"
                     android:hint="Password"/>
             </com.google.android.material.textfield.TextInputLayout>

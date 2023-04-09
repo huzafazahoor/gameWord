@@ -1,105 +1,44 @@
 package com.example.gameword.activities
 
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.TextPaint
-import android.text.style.ClickableSpan
-import android.text.style.StyleSpan
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import com.example.gameword.R
 import com.example.gameword.base.BaseActivity
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import com.example.gameword.databinding.ActivityLoginBinding
+import com.example.gameword.utils.Email
+import com.example.gameword.utils.Password
 
 class ActivityLogin : BaseActivity() {
-
-
-    private lateinit var edtEmail: EditText
-    private lateinit var edtPassword: EditText
-    private lateinit var btnLogin: Button
-
-    private lateinit var mAuth: FirebaseAuth
-
+    private var binding: ActivityLoginBinding ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
-
-        mAuth = Firebase.auth
-
-//        edtEmail = findViewById(R.id.edt_email)
-//        edtPassword = findViewById(R.id.edt_password)
-//        btnLogin = findViewById(R.id.btnLogin)
-        printSignUp()
-
-//        btnLogin.setOnClickListener{
-//            val email = edtEmail.text.toString().trim()
-//            val password = edtPassword.text.toString().trim()
-//
-//            login(email,password)
-//        }
-
-
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding!!.root)
+        setListeners()
     }
 
-    private fun login(email: String, password: String){
-
-
-        mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-
-                    Toast.makeText(this@ActivityLogin, "goodJOB", Toast.LENGTH_SHORT).show()
-                    val sharedPreference =  getSharedPreferences("User", Context.MODE_PRIVATE)
-                    val editor = sharedPreference.edit()
-                    val userid = Firebase.auth.currentUser?.uid
-                    editor.putString("UserId",userid)
-                    editor.apply()
-
-                    val intent = Intent(this@ActivityLogin, ActivityHome::class.java)
-
-                    /*intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or
-                            Intent.FLAG_ACTIVITY_NEW_TASK)*/
-                    finish()
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this@ActivityLogin, "User does not exist", Toast.LENGTH_SHORT).show()
-                }
+    private fun setListeners() {
+        binding!!.tvLogin.setOnClickListener {
+            val password: String = binding!!.tiePassword.text.toString()
+            val email: String = binding!!.tieEmail.text.toString()
+            val confirmPassword: String = password
+            val passwordValidationResult: Password? = isPasswordAndConfirmPasswordMatchedAndValidAndNonEmpty(password, confirmPassword)
+            val emailValidationResult: Email? = isEmailValidAndNonEmpty(email)
+            if(emailValidationResult == Email.EMAIL_VALID && passwordValidationResult == Password.PASSWORD_MATCHED) {
+                //TODO - PERFORM LOGIN
+                startActivity(Intent(this@ActivityLogin, ActivityHome::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK))
+            } else if (emailValidationResult == Email.EMAIL_NOT_VALID) {
+                showErrorDialog(this@ActivityLogin, "Please enter valid email address.")
+            } else if (passwordValidationResult == Password.BOTH_LESS_THAN_8_CHARACTERS) {
+                showErrorDialog(this@ActivityLogin, "Password must be at least 8 characters long.")
             }
-    }
-
-
-    private fun printSignUp(){
-        val ss = SpannableString("Don't have an account? Sign Up now.")
-        val clickableSpan: ClickableSpan = object : ClickableSpan() {
-
-            override fun onClick(textView: View) {
-                startActivity(Intent(this@ActivityLogin, ActivityRegistration::class.java))
-            }
-
-            override fun updateDrawState(ds: TextPaint) {
-                super.updateDrawState(ds)
-                ds.color = Color.CYAN
+            else {
+                showErrorDialog(this@ActivityLogin, "Please fill all required fields.")
             }
         }
-        ss.setSpan(clickableSpan, 23, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        val boldSpan = StyleSpan(Typeface.BOLD)
-        ss.setSpan(boldSpan, 23, 30, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-
-//        val textView = findViewById<TextView>(R.id.signUpText)
-//        textView.text = ss
-//
-//        textView.movementMethod = LinkMovementMethod.getInstance()
-//        textView.highlightColor = Color.TRANSPARENT
+        binding!!.tvNewMember.setOnClickListener {
+            startActivity(Intent(this@ActivityLogin, ActivityRegistration::class.java))
+        }
     }
+
 }

@@ -2,11 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_drawable_dialog_dark"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingTop="@dimen/_30sdp"
-    android:paddingStart="@dimen/_18sdp"
-    android:paddingEnd="@dimen/_18sdp"
+    android:paddingStart="@dimen/_12sdp"
+    android:paddingEnd="@dimen/_12sdp"
     android:paddingBottom="@dimen/_30sdp">
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_otp_sent_message"
@@ -19,19 +19,22 @@
         android:textColor="@color/pink_3"
         style="@style/TextAppearanceSubtitle1"
         android:layout_height="wrap_content"/>
-    <com.mukeshsolanki.OtpView
+
+    <in.aabhasjindal.otptextview.OtpTextView
         android:id="@+id/otp_view"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_below="@id/tv_otp_sent_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:OtpItemCount="6"
-        android:inputType="number"
+        android:layout_below="@id/tv_otp_sent_message"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:inputType="numberPassword"
         android:textColor="@color/pink_3"
-        app:OtpItemSpacing="@dimen/_7sdp"
-        app:OtpState_filled="true"
-        android:itemBackground="@drawable/bg_drawable_otp_item"/>
+        app:height="@dimen/_35sdp"
+        app:length="6"
+        app:otp="123456"
+        app:otp_box_background="@drawable/bg_drawable_otp_item"
+        app:otp_text_size="@dimen/_13sdp"
+        app:width="@dimen/_30sdp" />
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tv_timer"
         android:text="@string/code_expiration"
@@ -44,4 +47,13 @@
         style="@style/TextAppearanceSubtitle1"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"/>
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_below="@id/tv_timer"
+        android:layout_marginTop="@dimen/_14sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MaterialTextViewTheme"
+        android:id="@+id/tv_verify"
+        android:background="@drawable/bg_gradient_btn"
+        android:text="Verify OTP"/>
 </RelativeLayout>

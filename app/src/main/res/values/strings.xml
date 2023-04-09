@@ -4,4 +4,8 @@
     <string name="already_member">Already Registered? <u>Login</u></string>
     <string name="otp_verification_message">Please input <b>6 digit number</b> we have sent to <b>%1$s</b> for verification.</string>
     <string name="code_expiration">The code will expire in : <b>%1$s</b> </string>
+    <string name="title_activity_home">ActivityHome</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

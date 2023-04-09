@@ -1,34 +1,28 @@
 package com.example.gameword.activities
 
-
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.gameword.R
-import com.example.gameword.adapters.RecyclerViewAdapter
 import com.example.gameword.base.BaseActivity
-
+import com.example.gameword.databinding.ActivityHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class ActivityHome : BaseActivity() {
 
-    private var layoutManager : RecyclerView.LayoutManager? = null
-    private var adapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>? = null
-
+    private lateinit var binding: ActivityHomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_page)
 
-        val recyclerview = findViewById<RecyclerView>(R.id.recyclerView)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        layoutManager = LinearLayoutManager(this)
-        adapter = RecyclerViewAdapter()
-        recyclerview.layoutManager = layoutManager
-        recyclerview.adapter = adapter
+        val navView: BottomNavigationView = binding.bottomNavigationView
 
-
+        val navController = findNavController(R.id.nav_host_fragment_activity_home)
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+        navView.setupWithNavController(navController)
     }
-
-
 }
