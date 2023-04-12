@@ -1,15 +1,15 @@
-package com.example.gameword.activities.ui.notifications
+package com.example.gameword.activities.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.gameword.base.BaseFragment
-import com.example.gameword.databinding.FragmentNotificationsBinding
+import com.example.gameword.databinding.FragmentProfileBinding
 
-class NotificationsFragment : BaseFragment() {
+class ProfileFragment : BaseFragment() {
 
-    private var binding: FragmentNotificationsBinding? = null
+    private var binding: FragmentProfileBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -20,7 +20,7 @@ class NotificationsFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         return binding!!.root
     }

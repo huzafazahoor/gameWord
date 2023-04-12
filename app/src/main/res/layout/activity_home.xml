@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/bg_drawable_layout_2"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <RelativeLayout
+       android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:contentInsetStart="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_6">
+        <ImageView
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/iv_notifications"
+            android:padding="@dimen/_10sdp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_notifications" />
+        <ImageView
+            android:scaleType="fitCenter"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_sliding_root_nav"
+            android:padding="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_menu" />
+    </RelativeLayout>
     <fragment
+        android:layout_below="@id/toolbar"
         android:id="@+id/nav_host_fragment_activity_home"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
@@ -15,6 +45,7 @@
         app:navGraph="@navigation/mobile_navigation" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+
         android:foregroundGravity="center"
         android:id="@+id/cl"
         android:layout_width="match_parent"
@@ -23,16 +54,16 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <com.google.android.material.bottomappbar.BottomAppBar
+            app:hideOnScroll="true"
+            app:layout_scrollFlags="scroll|enterAlways"
             app:elevation="0dp"
             android:gravity="center"
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:fabCradleMargin="12dp"
-            app:fabCradleRoundedCornerRadius="10dp"
-            app:fabCradleVerticalOffset="5dp"
             app:backgroundTint="@color/purple_6"
+            app:fabAnchorMode="embed"
             app:contentInsetStart="0dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -44,8 +75,7 @@
                 android:background="@drawable/bg_transparent"
                 app:menu="@menu/bottom_nav_menu"
                 app:labelVisibilityMode="unlabeled"
-
-                app:itemIconSize="30dp"/>
+                />
 
         </com.google.android.material.bottomappbar.BottomAppBar>
 
@@ -57,6 +87,7 @@
             android:contentDescription="@string/app_name"
             app:fabCustomSize="@dimen/_40sdp"
             app:maxImageSize="@dimen/_20sdp"
-            app:layout_anchor="@id/bottomAppBar" />
+
+            app:layout_anchor="@id/bottomAppBar"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

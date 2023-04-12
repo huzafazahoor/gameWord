@@ -17,19 +17,21 @@
             android:name=".activities.ActivityGamesDetails"
             android:exported="false" />
         <activity
-            android:name=".activities.ActivityProfile"
+            android:name=".activities.ActivityNotifications"
             android:exported="false" />
         <activity
             android:name=".activities.ActivityHome"
-            android:exported="false"/>
-        <activity
-            android:name=".activities.ActivitySplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ActivitySplashScreen"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".activities.ActivityRegistration"
