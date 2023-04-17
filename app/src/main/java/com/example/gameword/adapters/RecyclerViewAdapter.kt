@@ -23,8 +23,8 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
     }
 
     override fun onBindViewHolder(holder: RecyclerViewAdapter.ViewHolder, position: Int) {
-        holder.ContactName.text = name[position]
-        holder.ContactNumber.text = number[position]
+//        holder.ContactName.text = name[position]
+//        holder.ContactNumber.text = number[position]
     }
 
     override fun getItemCount(): Int {
@@ -32,13 +32,13 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
     }
 
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        var ContactName : TextView
-        var ContactNumber : TextView
+//        var ContactName : TextView
+//        var ContactNumber : TextView
 
-        init {
-            ContactName = itemView.findViewById(R.id.textView)
-            ContactNumber = itemView.findViewById(R.id.textView2)
-        }
+//        init {
+//            ContactName = itemView.findViewById(R.id.textView)
+//            ContactNumber = itemView.findViewById(R.id.textView2)
+//        }
     }
 
 

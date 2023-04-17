@@ -71,7 +71,7 @@
                 app:itemIconTint="@color/navigation_item_tint"
                 android:id="@+id/bottomNavigationView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/bg_transparent"
                 app:menu="@menu/bottom_nav_menu"
                 app:labelVisibilityMode="unlabeled"
@@ -87,7 +87,7 @@
             android:contentDescription="@string/app_name"
             app:fabCustomSize="@dimen/_40sdp"
             app:maxImageSize="@dimen/_20sdp"
-
+            android:layout_marginBottom="@dimen/_2sdp"
             app:layout_anchor="@id/bottomAppBar"/>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

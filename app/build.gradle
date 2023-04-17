@@ -78,5 +78,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     implementation project(path: ':SlidingRootNav')
+    implementation 'com.kenilt.loopingviewpager:loopingviewpager:0.2.0'
 
 }

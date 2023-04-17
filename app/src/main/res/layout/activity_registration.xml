@@ -36,15 +36,16 @@
                 android:layout_height="wrap_content"
                 style="@style/TextAppearanceHeadline2"
                 android:text="Create Account"/>
+
             <com.google.android.material.textview.MaterialTextView
-                android:layout_below="@id/tv_welcome_back"
                 android:id="@+id/tv_fill_fields_message"
+                style="@style/TextAppearanceSubtitle2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_welcome_back"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
-                style="@style/TextAppearanceSubtitle2"
-                android:text="Fill following fields to create account."/>
+                android:text="Fill following fields to create account." />
             <LinearLayout
                 android:id="@+id/ll_name"
                 android:layout_below="@id/tv_fill_fields_message"

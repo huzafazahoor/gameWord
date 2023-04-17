@@ -1,16 +1,12 @@
 package com.example.gameword.activities.ui.home
 
-import android.animation.Animator
-import android.animation.ValueAnimator
-import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AccelerateInterpolator
-import androidx.lifecycle.ViewModelProvider
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.example.gameword.adapters.FeaturedTournamentsImageSliderAdapter
 import com.example.gameword.base.BaseFragment
 import com.example.gameword.databinding.FragmentHomeBinding
@@ -18,70 +14,76 @@ import com.example.gameword.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseFragment() {
 
-    private var binding: FragmentHomeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private lateinit var binding: FragmentHomeBinding
+    private var handler: Handler? = null
+    private val scrollHandler = Handler(Looper.getMainLooper())
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        return binding!!.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
+        handler = Handler()
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setListeners()
+        setAdapters()
+        setScrollOnFeaturedTournaments()
 
-        binding!!.vpSliderFeaturedTournaments.adapter = activity?.let {
+    }
+
+    private fun setListeners() {
+
+    }
+
+    private fun setAdapters() {
+        binding.vpSliderFeaturedTournaments.adapter = context?.let {
             FeaturedTournamentsImageSliderAdapter(
                 it
             )
         }
-        binding!!.vpSliderFeaturedTournaments.autoScroll(3500)
     }
 
-    private fun ViewPager.autoScroll(interval: Long) {
-
-        val handler = Handler()
-        var scrollPosition = 0
-
-        val runnable = object : Runnable {
-
-            override fun run() {
-                val count = adapter?.count ?: 0
-                setCurrentItem(scrollPosition++ % count, true)
-                handler.postDelayed(this, interval)
-            }
+    private val scrollRunnable = object : Runnable {
+        override fun run() {
+            val currentPosition = binding.vpSliderFeaturedTournaments.currentItem
+            val nextPosition =
+                (currentPosition + 1) % binding.vpSliderFeaturedTournaments.adapter!!.itemCount
+            binding.vpSliderFeaturedTournaments.setCurrentItem(nextPosition, true)
+            scrollHandler.postDelayed(this, 2000)
         }
-
-        addOnPageChangeListener(object: ViewPager.OnPageChangeListener {
-            override fun onPageSelected(position: Int) {
-                scrollPosition = position + 1
-            }
+    }
+    private fun setScrollOnFeaturedTournaments() {
+        binding.vpSliderFeaturedTournaments.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
 
             override fun onPageScrollStateChanged(state: Int) {
-            }
+                super.onPageScrollStateChanged(state)
+                when (state) {
+                    ViewPager2.SCROLL_STATE_IDLE -> {
+                        scrollHandler.postDelayed(scrollRunnable, 2000)
+                    }
 
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
+                    ViewPager2.SCROLL_STATE_DRAGGING -> {
+                        scrollHandler.removeCallbacks(scrollRunnable)
+                    }
 
+                    ViewPager2.SCROLL_STATE_SETTLING -> {
+                        scrollHandler.removeCallbacks(scrollRunnable)
+                    }
+                }
             }
         })
 
-        handler.post(runnable)
+        binding.vpSliderFeaturedTournaments.postDelayed(scrollRunnable, 2000)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        scrollHandler.removeCallbacks(scrollRunnable)
     }
 }
