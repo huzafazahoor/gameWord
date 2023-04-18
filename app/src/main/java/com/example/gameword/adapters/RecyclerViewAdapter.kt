@@ -3,7 +3,6 @@ package com.example.gameword.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gameword.R
 
@@ -18,7 +17,7 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
         }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewAdapter.ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.game_card, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item_featured_game, parent, false)
         return ViewHolder(v)
     }
 

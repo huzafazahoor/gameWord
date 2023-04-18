@@ -7,7 +7,10 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="@dimen/_16sdp"
     app:cardElevation="@dimen/_2sdp"
-    app:cardUseCompatPadding="true">
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    app:cardUseCompatPadding="true"
+    android:focusable="true">
 
     <RelativeLayout
         android:paddingStart="@dimen/_7sdp"

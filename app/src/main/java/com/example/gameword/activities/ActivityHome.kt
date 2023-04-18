@@ -1,7 +1,7 @@
 package com.example.gameword.activities
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.gameword.R
@@ -27,10 +27,12 @@ class ActivityHome : BaseActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         navView.setupWithNavController(navController)
-//        setSupportActionBar(binding.toolbar)
-//        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+        setListeners(savedInstanceState = savedInstanceState)
+    }
+
+    private fun setListeners(savedInstanceState:Bundle?) {
         binding.ivSlidingRootNav.setOnClickListener {
-            Log.d("ACTIVITY_HOME", "::::ONCLICK")
             if(slidingRootNav == null) {
                 slidingRootNav = SlidingRootNavBuilder(this).withMenuOpened(false)
                     .withContentClickableWhenMenuOpened(false)
@@ -42,6 +44,10 @@ class ActivityHome : BaseActivity() {
                     .inject()
             }
             slidingRootNav?.openMenu()
+        }
+
+        binding.ivNotifications.setOnClickListener {
+            startActivity(Intent(this, ActivityNotifications::class.java))
         }
 
     }

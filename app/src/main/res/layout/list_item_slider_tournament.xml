@@ -45,7 +45,9 @@
             android:id="@+id/tv_register"
             android:scaleX="-1"
             android:textScaleX="-1"
-
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             android:background="@drawable/bg_gradient_btn"
             android:text="Play Tournament"/>
     </RelativeLayout>

@@ -1,5 +1,7 @@
 package com.example.gameword.activities.ui.home
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -7,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
+import com.example.gameword.activities.ActivityAllFeaturedGames
+import com.example.gameword.adapters.FeaturedGamesAdapter
 import com.example.gameword.adapters.FeaturedTournamentsImageSliderAdapter
 import com.example.gameword.base.BaseFragment
 import com.example.gameword.databinding.FragmentHomeBinding
@@ -18,13 +22,9 @@ class HomeFragment : BaseFragment() {
     private var handler: Handler? = null
     private val scrollHandler = Handler(Looper.getMainLooper())
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        handler = Handler()
+        handler = Handler(Looper.getMainLooper())
         return binding.root
     }
 
@@ -37,15 +37,14 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun setListeners() {
-
+        binding.mtvViewAll.setOnClickListener {
+            startActivity(Intent(context, ActivityAllFeaturedGames::class.java))
+        }
     }
 
     private fun setAdapters() {
-        binding.vpSliderFeaturedTournaments.adapter = context?.let {
-            FeaturedTournamentsImageSliderAdapter(
-                it
-            )
-        }
+        binding.vpSliderFeaturedTournaments.adapter = context?.let { FeaturedTournamentsImageSliderAdapter(it)}
+        binding.rvFeaturedGames.adapter = context?.let { FeaturedGamesAdapter(context = it) }
     }
 
     private val scrollRunnable = object : Runnable {

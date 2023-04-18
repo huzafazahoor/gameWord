@@ -182,7 +182,18 @@
                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                    app:spanCount="2"
                    tools:itemCount="20"
-                   tools:listitem="@layout/game_card" />
+                   tools:listitem="@layout/list_item_featured_game" />
+               <com.google.android.material.textview.MaterialTextView
+                   android:id="@+id/mtv_view_all"
+                   android:layout_marginTop="@dimen/_12sdp"
+                   android:layout_marginBottom="@dimen/_7sdp"
+                   android:layout_centerHorizontal="true"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   style="@style/TextAppearanceSubtitle2"
+                   android:text="View All"
+                   android:layout_below="@id/rv_featured_games"
+                   app:drawableEndCompat="@drawable/ic_arrow_right" />
            </RelativeLayout>
        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
