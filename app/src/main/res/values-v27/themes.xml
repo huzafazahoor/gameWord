@@ -4,16 +4,16 @@
     <style name="Theme.GameWord" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/pink_2</item>
-        <item name="colorPrimaryVariant">@color/purple_3</item>
+        <item name="colorPrimaryVariant">@color/purple_6</item>
         <item name="colorOnPrimary">@color/purple_5</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/pink_3</item>
+        <item name="colorSecondary">@color/pink_4</item>
         <item name="colorSecondaryVariant">@color/purple_3</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/background</item>
         <!-- Customize your theme here. -->
-        <item name="itemBackground">@color/pink_3</item>
+        <item name="itemBackground">@color/pink_4</item>
         <item name="android:navigationBarColor">@color/purple_6</item>
     </style>
 </resources>

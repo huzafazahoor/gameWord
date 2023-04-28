@@ -14,7 +14,6 @@ import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder
 class ActivityHome : BaseActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private var slidingRootNav: SlidingRootNav? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,23 +31,7 @@ class ActivityHome : BaseActivity() {
     }
 
     private fun setListeners(savedInstanceState:Bundle?) {
-        binding.ivSlidingRootNav.setOnClickListener {
-            if(slidingRootNav == null) {
-                slidingRootNav = SlidingRootNavBuilder(this).withMenuOpened(false)
-                    .withContentClickableWhenMenuOpened(false)
-                    .withSavedState(savedInstanceState)
-                    .withMenuLayout(R.layout.menu_left_drawer)
-                    .withContentClickableWhenMenuOpened(false)
-                    .withRootViewElevation(10)
-                    .withRootViewScale(0.5.toFloat())
-                    .inject()
-            }
-            slidingRootNav?.openMenu()
-        }
 
-        binding.ivNotifications.setOnClickListener {
-            startActivity(Intent(this, ActivityNotifications::class.java))
-        }
 
     }
 }

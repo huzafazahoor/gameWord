@@ -4,18 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:cardCornerRadius="@dimen/_12sdp"
-    app:cardElevation="@dimen/_3sdp"
+    app:cardElevation="@dimen/_7sdp"
     app:cardUseCompatPadding="true">
     <RelativeLayout
+        android:background="@drawable/bg_drawable_layout"
         android:padding="@dimen/_8sdp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/pink_3"
             android:id="@+id/mtv_name"
             style="@style/TextAppearanceHeadline3"
+            android:textColor="@color/pink_1"
             android:layout_alignEnd="@id/mtv_name"
             android:text="Nameera"/>
         <com.google.android.material.textview.MaterialTextView
@@ -24,6 +25,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignTop="@id/mtv_name"
             android:text="$100"
+            android:textColor="@color/pink_1"
             android:gravity="center"
             style="@style/TextAppearanceHeadline6"
             android:layout_alignBottom="@id/mtv_name"/>
@@ -35,6 +37,7 @@
             android:layout_below="@id/mtv_name"
             android:textSize="@dimen/_11sdp"
             android:id="@+id/mtv_description"
+            android:textColor="@color/pink_1"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu euismod magna. Vivamus at dolor ut dui rutrum feugiat sed sed nulla. Maecenas euismod mi ut sem vulputate commodo. Pellentesque eget purus lobortis, finibus nunc a, placerat dui. Vestibulum fringilla quam nec mauris pulvinar bibendum."/>
         <com.google.android.material.textview.MaterialTextView
             android:layout_below="@id/mtv_description"
@@ -43,12 +46,11 @@
             android:layout_height="wrap_content"
             style="@style/MaterialTextViewTheme"
             android:id="@+id/tv_register"
-            android:scaleX="-1"
-            android:textScaleX="-1"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
             android:background="@drawable/bg_gradient_btn"
+            android:textColor="@color/pink_1"
             android:text="Play Tournament"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

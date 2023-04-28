@@ -9,11 +9,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
+import com.example.gameword.R
 import com.example.gameword.activities.ActivityAllFeaturedGames
+import com.example.gameword.activities.ActivityNotifications
 import com.example.gameword.adapters.FeaturedGamesAdapter
 import com.example.gameword.adapters.FeaturedTournamentsImageSliderAdapter
 import com.example.gameword.base.BaseFragment
 import com.example.gameword.databinding.FragmentHomeBinding
+import com.yarolegovich.slidingrootnav.SlidingRootNav
+import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder
 
 
 class HomeFragment : BaseFragment() {
@@ -21,6 +25,7 @@ class HomeFragment : BaseFragment() {
     private lateinit var binding: FragmentHomeBinding
     private var handler: Handler? = null
     private val scrollHandler = Handler(Looper.getMainLooper())
+    private var slidingRootNav: SlidingRootNav? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -30,15 +35,33 @@ class HomeFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setListeners()
+        setListeners(savedInstanceState)
         setAdapters()
         setScrollOnFeaturedTournaments()
 
     }
 
-    private fun setListeners() {
+    private fun setListeners(savedInstanceState: Bundle?) {
         binding.mtvViewAll.setOnClickListener {
             startActivity(Intent(context, ActivityAllFeaturedGames::class.java))
+        }
+
+        binding.ivSlidingRootNav.setOnClickListener {
+            if(slidingRootNav == null) {
+                slidingRootNav = SlidingRootNavBuilder(activity).withMenuOpened(false)
+                    .withContentClickableWhenMenuOpened(false)
+                    .withSavedState(savedInstanceState)
+                    .withMenuLayout(R.layout.menu_left_drawer)
+                    .withContentClickableWhenMenuOpened(false)
+                    .withRootViewElevation(10)
+                    .withRootViewScale(0.5.toFloat())
+                    .inject()
+            }
+            slidingRootNav?.openMenu()
+        }
+
+        binding.ivNotifications.setOnClickListener {
+            startActivity(Intent(activity, ActivityNotifications::class.java))
         }
     }
 

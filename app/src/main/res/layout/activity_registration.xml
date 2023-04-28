@@ -95,14 +95,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    app:ccp_arrowColor="@color/pink_3"
-                    app:ccp_contentColor="@color/pink_3"
+                    app:ccp_arrowColor="@color/pink_1"
+                    app:ccp_contentColor="@color/pink_1"
                     app:ccp_showFlag="false"
                     app:ccpDialog_background="@color/bg_widgets"
                     app:ccpDialog_cornerRadius="@dimen/_12sdp"
                     app:ccpDialog_rippleEnable="true"
                     app:ccpDialog_showTitle="false"
-                    app:ccpDialog_textColor="@color/pink_3"
+                    app:ccpDialog_textColor="@color/pink_1"
                     app:ccp_hintExampleNumber="true"
                     app:ccp_defaultPhoneCode="92"
                     app:ccp_showNameCode="false"/>
@@ -111,7 +111,7 @@
                     android:layout_marginBottom="10dp"
                     android:layout_width="0.8dp"
                     android:layout_height="match_parent"
-                    android:background="@color/pink_3"/>
+                    android:background="@color/pink_1"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/til_phone_number"
                     android:layout_marginStart="@dimen/_5sdp"
@@ -149,7 +149,7 @@
                 style="@style/TextInputLayoutDesign"
                 android:layout_width="match_parent"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/pink_3"
+                app:passwordToggleTint="@color/pink_1"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/tie_password"
@@ -165,7 +165,7 @@
                 android:layout_below="@id/til_password"
                 style="@style/TextInputLayoutDesign"
                 app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/pink_3"
+                app:passwordToggleTint="@color/pink_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <com.google.android.material.textfield.TextInputEditText
@@ -185,7 +185,7 @@
                 style="@style/TextAppearanceSubtitle2"
 
                 android:text="I accept the Terms of Service and Privacy Policy."
-                android:buttonTint="@color/pink_3"
+                android:buttonTint="@color/pink_1"
                 android:gravity="center_vertical"/>
             <com.google.android.material.textview.MaterialTextView
                 android:layout_below="@id/tv_forget_password"

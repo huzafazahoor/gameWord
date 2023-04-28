@@ -3,19 +3,25 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="pink">#C42BA7</color>
-    <color name="pink_2">#FD4AC0</color>
-    <color name="background">#200B29</color>
+    <color name="pink_1">#ffdbf2</color>
+    <color name="pink_2">#fe93d9</color>
+    <color name="pink_3">#fd4bc0</color>
+    <color name="pink_4">#fc03a7</color>
+    <color name="pink_5">#b40277</color>
+    <color name="pink_6">#6c0148</color>
+    <color name="pink_7">#FD4AC0</color>
+    <color name="background">#15081d</color>
     <color name="bg_widgets">#482F52</color>
     <color name="bg_widgets_2">#CC674072</color>
-    <color name="pink_3">#C598DA</color>
+    <color name="pink_3_2">#C598DA</color>
     <color name="transparent_pink_3">#8AC598DA</color>
     <color name="shaded_grey">#AA8AB7</color>
-    <color name="purple_1">#652161</color>
-    <color name="purple_2">#5D346C</color>
-    <color name="purple_3">#78249A</color>
-    <color name="purple_4">#7A497E</color>
-    <color name="purple_5">#1B0A25</color>
-    <color name="purple_6">#380F43</color>
+    <color name="purple_1">#efe2f7</color>
+    <color name="purple_2">#d0a9e8</color>
+    <color name="purple_3">#b170d8</color>
+    <color name="purple_4">#9236c9</color>
+    <color name="purple_5">#69278f</color>
+    <color name="purple_6">#3f1756</color>
+    <color name="purple_7">#15081d</color>
     <color name="holo_red_dark">#CC0000</color>
 </resources>
