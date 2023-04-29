@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            app:backgroundTint="@color/purple_6"
+            app:backgroundTint="@color/pink_6"
             app:fabAnchorMode="embed"
             app:contentInsetStart="0dp">
 
@@ -51,6 +51,7 @@
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:src="@drawable/ic_add"
+            app:backgroundTint="@color/pink_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/app_name"
