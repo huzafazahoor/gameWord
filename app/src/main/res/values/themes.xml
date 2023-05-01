@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="itemBackground">@color/purple_3</item>
         <item name="windowActionBar">false</item>
+        <item name="android:windowBackground">#54575757</item>
     </style>
 
     <style name="TextInputLayoutDesign" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
