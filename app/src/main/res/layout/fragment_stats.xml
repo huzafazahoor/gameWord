@@ -4,7 +4,91 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".activities.ui.stats.StatsFragment">
+    tools:context=".activities.ui.stats.StatsFragment"
+    android:background="@drawable/bg_drawable_layout"
+    android:padding="@dimen/_12sdp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_your_stats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rl_your_stats"
+                    android:padding="@dimen/_12sdp"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_gradient_btn">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearanceHeadline6"
+                        android:text="Your Stats"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearanceSubtitle2"
+                                android:text="Rank:"/>
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearanceSubtitle2"
+                                android:text="PLay time:"/>
+                        </LinearLayout>
 
-
+                        <LinearLayout
+                            android:gravity="end"
+                            android:layout_marginTop="@dimen/_6sdp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearanceSubtitle2"
+                                android:text="Score: "/>
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                style="@style/TextAppearanceSubtitle2"
+                                android:text="Credits: "/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/TextAppearanceSubtitle2"
+                        android:text="Most Game Played: "/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/list_item_player_stats"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@id/cv_your_stats"
+                android:id="@+id/rv_stats"
+                tools:itemCount="3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

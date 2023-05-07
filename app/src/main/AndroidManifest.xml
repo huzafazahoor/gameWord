@@ -17,9 +17,6 @@
             android:name=".activities.ActivityGameDetails"
             android:exported="false" />
         <activity
-            android:name=".activities.ActivityAllFeaturedGames"
-            android:exported="false" />
-        <activity
             android:name=".activities.ActivityTournamentDetails"
             android:exported="false" />
 
@@ -48,5 +45,4 @@
             android:name=".activities.ActivityLogin"
             android:exported="true" />
     </application>
-
 </manifest>

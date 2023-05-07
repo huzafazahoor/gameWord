@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_drawable_layout"
     tools:context=".activities.ui.discover.DiscoverFragment">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/bg_drawable_layout">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/rl"

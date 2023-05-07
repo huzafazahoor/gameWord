@@ -24,4 +24,13 @@
     <color name="purple_6">#3f1756</color>
     <color name="purple_7">#15081d</color>
     <color name="holo_red_dark">#CC0000</color>
+
+    <color name="golden_5">#b69a00</color>
+    <color name="golden_6">#6d5c00</color>
+
+    <color name="silver_5">#5b5b5b</color>
+    <color name="silver_6">#373737</color>
+
+    <color name="bronze_5">#925b24</color>
+    <color name="bronze_6">#583615</color>
 </resources>

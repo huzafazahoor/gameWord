@@ -1,11 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.ActivityGamesDetails">
-    <androidx.recyclerview.widget.RecyclerView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_drawable_layout"
+    tools:context=".activities.ui.discover.DiscoverFragment">
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp">
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@android:color/transparent"
+                android:fitsSystemWindows="true"
+                android:paddingHorizontal="@dimen/_3sdp"
+                app:contentInsetStart="0dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+
+                    android:id="@+id/til_email"
+                    style="@style/TextInputLayoutDesign"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tie_email"
+                        style="@style/TextInputEditTextTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="@dimen/_7sdp"
+                        android:hint="Search"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_featured_games"
+                style="@style/TextAppearanceHeadline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="Featured Games"
+                android:textColor="@color/pink_1"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_featured_games"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_featured_games"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/list_item_featured_game" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

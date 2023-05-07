@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gameword.activities.ActivityGameDetails
 import com.example.gameword.activities.ActivityGamesDetails
 import com.example.gameword.databinding.ListItemFeaturedGameBinding
 import com.example.gameword.modals.FeaturedGame
@@ -30,7 +31,7 @@ class FeaturedGamesAdapter(var context: Context) : RecyclerView.Adapter<Featured
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.root.setOnClickListener {
-            var intent = Intent(context, ActivityGamesDetails::class.java)
+            var intent = Intent(context, ActivityGameDetails::class.java)
             context.startActivity(intent)
         }
     }

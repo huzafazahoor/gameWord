@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gameword.R
+import com.example.gameword.adapters.AdapterPlayerStats
 import com.example.gameword.base.BaseFragment
 import com.example.gameword.databinding.FragmentStatsBinding
 
 class StatsFragment : BaseFragment() {
     var binding: FragmentStatsBinding ?=null
-    private lateinit var viewModel: StatsViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,8 +27,20 @@ class StatsFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(StatsViewModel::class.java)
-        // TODO: Use the ViewModel
+        setListeners()
+        setAdapter()
     }
 
+
+    private fun setListeners() {
+
+    }
+
+    private fun setAdapter() {
+        val adapter = context?.let { AdapterPlayerStats(it) }
+        binding?.apply {
+            rvStats.layoutManager = LinearLayoutManager(context)
+            rvStats.adapter = adapter
+        }
+    }
 }

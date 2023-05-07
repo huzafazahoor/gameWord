@@ -1,9 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_drawable_layout"
     tools:context=".activities.ActivityGameDetails">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:padding="@dimen/_14sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_game_image"
+                android:layout_width="@dimen/_125sdp"
+                android:layout_height="@dimen/_125sdp"
+                android:layout_centerHorizontal="true"
+                app:civ_border_width="@dimen/_5sdp"
+                app:civ_border_color="@color/pink_6"
+                android:src="@drawable/knifehiticon"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginVertical="@dimen/_15sdp"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearanceHeadline4"
+                android:gravity="center"
+                android:text="Knife Game"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/civ_game_image"
+                android:id="@+id/tv_game_name"/>
+            <RatingBar
+                android:id="@+id/rating_bar"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stepSize="0"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_below="@id/tv_game_name"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_description_heading"
+                style="@style/TextAppearanceHeadline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rating_bar"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Description"
+                android:textColor="@color/pink_1"
+                android:textStyle="bold" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_game_description"
+                style="@style/TextAppearanceSubtitle1"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:fontFamily="@font/poppins_light"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_description_heading"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                android:textColor="@color/pink_1" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title_featured_tournaments"
+                style="@style/TextAppearanceHeadline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_game_description"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Game Tournaments"
+                android:textColor="@color/pink_1"
+                android:textStyle="bold" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_slider_featured_tournaments"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_below="@id/tv_title_featured_tournaments"
+                android:overScrollMode="always" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_reviews"
+                style="@style/TextAppearanceHeadline5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vp_slider_featured_tournaments"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:text="Reviews"
+                android:textColor="@color/pink_1"
+                android:textStyle="bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_reviews"
+                android:layout_below="@id/tv_reviews"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
